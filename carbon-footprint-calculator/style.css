@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy';
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #f7f7f7;
+}
+*::selection{
+    color: #fff;
+    background: #000;
+}
+.navbar{
+    height: 100px;
+    width: 100%;
+    padding:24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 50;
+    position: fixed;
+}
+.navbar .nav_left img{
+    height:100px;
+    width:100px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.navbar .nav_right{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navbar .nav_right a{
+    text-decoration: none;
+    color:#000;
+    font-weight: 540;
+    font-size: 16px;
+    margin-right: 62px;
+    font-family: Helvetica;
+}
+
+.page1{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-top: 20vh;
+    padding:0 1vw;
+    overflow: hidden;
+}
+.video-container .video-text{
+    color:#f7f7f7;
+    z-index: 10;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+.video-container .video-text h1{
+    font-size: 8vw;
+    font-family:futura;
+    line-height: 7vw;
+    letter-spacing: -2px;
+    margin-right: 7vh;
+    white-space: nowrap;
+}
+.video-container{
+    height:70%;
+    width:70%;
+    margin-top:15vh;
+    margin-left: 15vw;
+}
+.video-container video{
+    height:100%;
+    width: 100%;
+    object-fit: contain;
+}
+.page2{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding:0 1vw;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.page2 .left{
+    height:100%;
+    width: 45%;
+    background: #f7f7f7;
+}
+.page2 .left img{
+    height:100%;
+    width:100%;
+    object-fit: contain;
+}
+.page2 .right{
+    height:100%;
+    width:45%;
+    background: #f7f7f7;
+}
+.page2 .right .right-container{
+    height:100%;
+    width:100%;
+}
+.page2 .right .right-container h1{
+    font-family: futura;
+    font-size: 30px;
+    padding-bottom: 3vw;
+}
+.page2 .right .right-container p{
+    font-family: Helvetica;
+    font-size: 20px;
+    padding-right: 30%;
+    line-height: 1.5;
+    padding-bottom: 3vw;
+}
+.page3{
+    min-height: 50vh;
+    width: 100%;
+    position: relative;
+    padding:0 1vw;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 20vh;
+}
+.page3 h1{
+    font-family: futura;
+    font-size: 50px;
+    text-align: center;
+    line-height: 1em;
+}
+.page3 .button{
+    padding: 15px 30px;
+    border-radius: 50px;
+    background-color: #000;
+    margin-top: 8vh;
+}
+.page3 .button a{
+    color: #f7f7f7;
+    text-decoration: none;
+}
+.page4 .head{
+    position:relative;
+    padding-left: 6.8vw;
+}
+.page4 .head h1{
+    font-family: futura;
+    font-size: 5vw;
+}
+.page4{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-top: 20vh;
+    overflow: hidden;
+}
+.page4 .calc_container{
+    margin-top:5vh;
+    width: 100%;
+    height: 80%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.page4 .calc_container .textcal{
+    height: 65%;
+    width:32.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0 , 0.5);
+    background-color: rgba(31, 30, 30, 0.129);
+    max-width: 450px;
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius: 10px;
+}
+.page4 .calc_container .imgright{
+    height:100%;
+    width: 30%;
+    object-fit: contain;
+}
+.page4 .calc_container .imgleft {
+    height:100%;
+    width: 34%;
+    object-fit: contain;
+}
+.page4 .calc_container .textcal h1{
+    text-align: center;
+    color:#000;
+    font-family: futura;
+}
+.page4 .calc_container .textcal label {
+    display: block;
+    margin-top: 10px;
+    font-family: Helvetica;
+}
+.page4 .calc_container .textcal input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Helvetica;
+}
+.page4 .calc_container .textcal button {
+    width: 100%;
+    padding: 10px;
+    background-color: #181717;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: Helvetica;
+}
+.page4 .calc_container .textcal button:hover {
+    background-color:#000;
+}
+.page4 .calc_container .textcal .result {
+    margin-top: 20px;
+    text-align: center;
+}
+.page4 .calc_container .textcal .icon {
+    font-size: 50px;
+    cursor: pointer;
+    margin: 10px;
+}
+.page4 .calc_container .textcal .hidden {
+    display: none;
+}
+.page4 .calc_container .textcal .tab-content {
+    display: none;
+}
+.page4 .calc_container .textcal .tab-content:not(.hidden) {
+    display: block;
+}
+.page4 .calc_container .backG{
+    height: 80vh;
+    width: 100vw;
+    position:relative;
+}
+.page4 .calc_container .backG img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.page6 .donate_head{
+    padding-top: 15vh;
+    min-height:80vh;
+    width:100%;
+    position: relative;
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+    padding-left:1vw;
+}
+.page6 .donate_head .donate_rght{
+    width: 35%;
+    height: 100%;
+}
+.page6 .donate_head .donate_left{
+    width: 58%;
+    height: 100%;
+}
+.page6 .donate_head .donate_left .baju_vali{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+}
+.page6 .donate_head .donate_left .baju_vali img{
+    width:100%;
+    height:100%;
+}
+.page6 .donate_head .donate_rght h1{
+    font-family: futura;
+    font-size: 4vw;
+    line-height: 4vw;
+}
+.page6 .donate_head .donate_rght p{
+    padding-top: 25px;
+    font-family: Helvetica;
+    font-size: 1.5vw;
+}
+.h_line{
+    width:100%;
+    height:1px;
+    background: #666060;
+    margin-top:4vw;
+    margin-bottom: 4vw;
+}
+.page7{
+    min-height: 160vh;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.page7 .smol_rght{
+    width:15%;
+    height: 100%;
+}
+.page7 .smol_lft{
+    width:15%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.page7 .smol_lft .smollftcont{
+    height:160vh;
+    width:100%;
+}
+.page7 .smol_lft .smollftcont img{
+    height:100%;
+}
+.page7 .smol_rght .smolrhtcont{
+    width:100%;
+    height: 160vh;
+}
+.page7 .smol_rght .smolrhtcont img{
+    width:100%;
+    height:100%;
+}
+.page7 .donation_org{
+    width:65%;
+    height:100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.page7 .donation_org div{
+    padding:10px 0px;
+}
+.yeh h1{
+    font-size: 60px;
+    font-family: futura;
+    margin: 6vw 14vw;
+    padding-left: 30px;
+}
+.page7 .donation_org a,p{
+    font-family: Helvetica;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.page7 .donation_org h3{
+    font-size: 20px;
+    font-family: futura;
+    padding-top: 15px;
+}
+.page7 .ri-circle-fill{
+    color:#000;
+    font-size: 8px;
+}
+.page5{
+    min-height: 105vh;
+    width: 100%;
+}
+.page5 h2{
+    font-family: futura;
+    font-size: 70px;
+    text-align: center;
+}
+.page5 p{
+    font-family: Helvetica;
+    font-size: 20px;
+    position: relative;
+}
+
+.page5 .info{
+    padding: 3px;
+    border-radius: 10px;
+    margin: 35px 80px;
+    text-align: center;
+}
+.page5 .how{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.page5 .how .overlay{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 25px;
+    position: absolute;
+    color:#f7f7f7;
+    background: rgba(0, 0, 0 , 0.5);
+    border-radius: 10px;
+}
+.page5 .how .heaad{
+    font-family: futura;
+    font-size: 30px;
+}
+.page5 .how .imag{
+    position: relative;
+    height: 70vh;
+    width:30%;
+    border-radius: 10px;
+}
+.page5 .how .imag img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    border-radius: 10px;
+}
+/* .cursor{
+    height:80px;
+    width:80px;
+    border-radius: 50%;
+    background:#666060;
+    position: fixed;
+} */

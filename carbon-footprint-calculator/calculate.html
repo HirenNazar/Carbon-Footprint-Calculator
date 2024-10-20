@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Designer.jpeg"  type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav_left">
+            <div><img src="Designer.jpeg" alt=""></div>
+        </div>
+        <div class="nav_right">
+            <a href="donate.html">Donate<i class="ri-tree-line"></i></a>
+            <a href="index.html">Home<i class="ri-home-8-line"></i></a>
+        </div>
+    </div>
+    <div class="main2">
+        <div class="page4">
+            <div class="head"><h1>CALCULATE YOUR CARBON <i class="ri-footprint-line"></i><i class="ri-footprint-fill"></i></h1></div>
+            <div class="calc_container">
+                <div class="backG"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <div class="textcal">
+                        <h1>Please fill the Information</h1>
+                        <div id="icons" class="icon-container">
+                            <i class="icon" onclick="showForm('electricityForm')"><?xml version="1.0" encoding="UTF-8"?>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="45" height="45"><path d="M12.566,24H8.719l2-8H6.586a2.561,2.561,0,0,1-2.451-3.3L7.976,0h9.467l-3,8h4.023a2.533,2.533,0,0,1,2.11,3.932Zm-1.285-2h.212l7.416-11.174A.532.532,0,0,0,18.466,10H11.557l3-8H9.46L6.049,13.276A.561.561,0,0,0,6.586,14h6.7Z"/></svg>
+                                </i>
+                            <i class="icon" onclick="showForm('naturalGasForm')"><i class="ri-fire-line"></i></i>
+                            <i class="icon" onclick="showForm('airTravelForm')"><i class="ri-plane-line"></i></i>
+                            <i class="icon" onclick="showForm('vehicleTravelForm')"><i class="ri-car-line"></i></i>
+                            <i class="icon" onclick="showForm('wasteForm')"><i class="ri-delete-bin-5-line"></i></i>
+                        </div>
+                        <div id="electricityForm" class="tab-content hidden">
+                            <label for="country">Country:</label>
+                            <input type="text" id="country" name="country" placeholder="Enter your country's ISO 3166 code">
+                            <label for="electricity">Electricity Consumption (kWh):</label>
+                            <input type="number" id="electricity" name="electricity">
+                            <button onclick="calculateElectricityFootprint()">Calculate Electricity Footprint</button>
+                            <div class="result" id="electricityResult"></div>
+                        </div>
+        
+                        <div id="naturalGasForm" class="tab-content hidden">
+                            <label for="natural-gas">Natural Gas Consumption (cubic meters):</label>
+                            <input type="number" id="natural-gas" name="natural-gas">
+                            <button onclick="calculateNaturalGasFootprint()">Calculate Natural Gas Footprint</button>
+                            <div class="result" id="naturalGasResult"></div>
+                        </div>
+        
+                        <div id="airTravelForm" class="tab-content hidden">
+                            <label for="passengers">Number of Passengers (Air Travel):</label>
+                            <input type="number" id="passengers" name="passengers">
+                            <label for="departure-airport">Departure Airport (IATA code):</label>
+                            <input type="text" id="departure-airport" name="departure-airport">
+                            <label for="destination-airport">Destination Airport (IATA code):</label>
+                            <input type="text" id="destination-airport" name="destination-airport">
+                            <button onclick="calculateAirTravelFootprint()">Calculate Air Travel Footprint</button>
+                            <div class="result" id="airTravelResult"></div>
+                        </div>
+        
+                        <div id="vehicleTravelForm" class="tab-content hidden">
+                            <label for="vehicle-make">Vehicle Make:</label>
+                            <select id="vehicle-make" name="vehicle-make" onchange="fetchVehicleModels()">
+                                <option value="">Select Make</option>
+                            </select>
+                            <label for="vehicle-model">Vehicle Model:</label>
+                            <select id="vehicle-model" name="vehicle-model">
+                                <option value="">Select Model</option>
+                            </select>
+                            <label for="vehicle-travel">Vehicle Travel Distance (km):</label>
+                            <input type="number" id="vehicle-travel" name="vehicle-travel">
+                            <button onclick="calculateVehicleFootprint()">Calculate Vehicle Footprint</button>
+                            <div class="result" id="vehicleTravelResult"></div>
+                        </div>
+        
+                        <div id="wasteForm" class="tab-content hidden">
+                            <label for="waste">Waste Generation (kg):</label>
+                            <input type="number" id="waste" name="waste">
+                            <button onclick="calculateWasteFootprint()">Calculate Waste Footprint</button>
+                            <div class="result" id="wasteResult"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="page5">
+            <h2>How is it calculated?</h2>
+            <div class="info"><p>A carbon footprint is calculated by estimating the total amount of greenhouse gases (GHGs) emitted directly or indirectly by human activities, typically measured in units of carbon dioxide equivalents (CO2e). Here's a general outline of how it's done:</p></div>
+            <div class="how">
+                <div class="imag">
+                    <img src="https://images.unsplash.com/photo-1677757103853-a304b6a182f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGFjdGl2aXR5fGVufDB8MXwwfHx8MA%3D%3D" alt="">
+                    <div class="overlay first">
+                        <p class="heaad">Identify Activities: </p>Determine the activities that contribute to GHG emissions. Common sources include electricity consumption, transportation (car, air travel), heating (natural gas, oil), waste production, and industrial processes.
+                    </div>
+                </div>
+                <div class="imag">
+                    <img src="https://plus.unsplash.com/premium_photo-1710793899218-efb3635e551d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb3RlY3Rpbmd8ZW58MHwxfDB8fHww" alt="">
+                    <div class="overlay second">
+                        <p class="heaad">Collect Data: </p>Gather data on the amount of resources consumed or the extent of activities. For example, the number of kilowatt-hours (kWh) of electricity used, miles driven, gallons of gasoline consumed, hours of flight time, or tons of waste produced.
+                    </div>
+                </div>
+                <div class="imag">
+                    <img src="https://plus.unsplash.com/premium_photo-1674043991912-760350d49fbd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kdXN0cnl8ZW58MHwxfDB8fHww" alt="">
+                    <div class="overlay third">
+                        <p class="heaad">Emission Factors: </p>Use emission factors to convert activity data into CO2e. Emission factors represent the average emissions produced per unit of activity. For instance, the amount of CO2 emitted per kWh of electricity, per mile driven, per gallon of gasoline, per hour of flight, or per ton of waste.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="animations.js"></script>
+    <script src="calc.js"></script>
+</body>
+</html>
